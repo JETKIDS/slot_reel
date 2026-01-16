@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-container {
+  width: 100%;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
