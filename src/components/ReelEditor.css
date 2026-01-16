@@ -24,15 +24,66 @@
   margin-bottom: 20px;
 }
 
-.reel-viewport {
-  width: 100px; /* Standard reel width roughly */
-  height: 300px; /* Viewport height showing ~3 symbols */
+.reel-viewport, .single-reel-viewport {
+  width: 100px;
+  /* height: 300px;  Removed fixed height */
   overflow: hidden;
   border: 4px solid #333;
   border-radius: 4px;
   position: relative;
-  margin: 0 auto 20px auto;
   background-color: white;
+}
+
+.slot-machine-display {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.reel-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.nudge-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.nudge-controls button {
+  padding: 5px 10px;
+  font-size: 0.8em;
+  min-width: 40px;
+}
+
+.sliders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.slider-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-group label {
+  width: 60px;
+  font-weight: bold;
+}
+
+.slider-group span {
+  width: 60px;
+  text-align: right;
+  font-family: monospace;
 }
 
 .reel-image {
@@ -41,7 +92,7 @@
   /* Smooth movement if needed, but instant is better for precise adjustment */
 }
 
-.reel-overlay {
+/* .reel-overlay {
   position: absolute;
   top: 50%;
   left: 0;
@@ -50,6 +101,26 @@
   background-color: rgba(255, 0, 0, 0.5);
   pointer-events: none;
   transform: translateY(-50%);
+} */
+
+.reel-mask-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.reel-mask-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 10;
 }
 
 .position-slider {
